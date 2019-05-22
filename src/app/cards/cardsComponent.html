@@ -1,0 +1,13 @@
+<html>
+    <table>
+        <tr *ngFor = "let row of cards ; let even = even, let odd = odd" [ngClass] = "{odd:odd,even:even}">
+
+            <td class="veld" , *ngFor = "let veld of row">
+                
+                {{"veld"}}
+            
+            </td>
+        </tr>
+
+    </table> 
+</html>
