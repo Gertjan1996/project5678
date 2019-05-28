@@ -2,27 +2,20 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { CurrentgameComponent } from './currentgame/currentgame.component';
-import { TileComponent } from './tile/tile.component';
-import { TimeleftComponent } from './timeleft/timeleft.component';
-import { TopvijfComponent } from './topvijf/topvijf.component';
-import { BoardoptionsComponent } from './boardoptions/boardoptions.component';
-import { BoardcolorsComponent } from './boardcolors/boardcolors.component';
-import { NewgameComponent } from './newgame/newgame.component';
+import { BoardModule } from './board/board.module';
+import { CurrentGameMenuModule } from './current-game-menu/current-game-menu.module';
+import { TopscoreColorsNewGameModule } from './topscore-colors-new-game/topscore-colors-new-game.module';
+
 
 @NgModule({
   declarations: [
-    AppComponent,
-    CurrentgameComponent,
-    TileComponent,
-    TimeleftComponent,
-    TopvijfComponent,
-    BoardoptionsComponent,
-    BoardcolorsComponent,
-    NewgameComponent
+    AppComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    CurrentGameMenuModule,
+    BoardModule,
+    TopscoreColorsNewGameModule
   ],
   providers: [],
   bootstrap: [AppComponent]
