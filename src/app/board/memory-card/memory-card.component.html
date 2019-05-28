@@ -1,3 +1,21 @@
 <p>
   memory-card works!
 </p>
+
+<table style="width:100%">
+  <tr>
+    <td>test</td>
+  </tr>
+</table>
+
+<table id="speelveld">
+<tr *ngFor="let row of this.game.boardsize">
+  <td *ngFor="let column of this.game.boardsize">test</td>
+</tr>
+</table>
+
+<table style="width:100%">
+  <tr>
+    <td *ngFor="let board of this.game.boardsize">test</td>
+  </tr>
+</table>
