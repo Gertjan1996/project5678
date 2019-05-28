@@ -1,21 +1,5 @@
-<p>
-  memory-card works!
-</p>
-
-<table style="width:100%">
-  <tr>
-    <td>test</td>
-  </tr>
-</table>
-
 <table id="speelveld">
-<tr *ngFor="let row of this.game.boardsize">
-  <td *ngFor="let column of this.game.boardsize">test</td>
-</tr>
-</table>
-
-<table style="width:100%">
-  <tr>
-    <td *ngFor="let board of this.game.boardsize">test</td>
+  <tr *ngFor="let rows of this.game.speelVeld.Rows">
+    <td *ngFor="let kaart of rows.kaarten" class="inactive" [id]="kaart" (click)="cardClicked($event)">{{this.game.karakter}}</td>
   </tr>
 </table>
