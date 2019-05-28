@@ -4,27 +4,39 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class GameService {
-  speelVeld = { "Rows": [] };
-  kaartenArray = [];
+  firstCard: number;
+  secondCard: number;
+  tempFirstCard;
+  tempSecondCard;
+
+  timeOutTimer;
+
+  timeOut: number;
+  gevondenParen: number;
   boardsize: number;
+
+  speelVeld = { "Rows": [] };
+  cardLetters = [];
   karakter: string;
 
   constructor() {
+    this.timeOut = 3;
+    this.gevondenParen = 0;
     this.boardsize = 4;
     this.karakter = '#';
     this.vulSpeelveld()
   }
 
-  vulSpeelveld(kaartCount = 0) {
+  vulSpeelveld(cardIndex = 0) {
     var getNextLetter = this.nextLetter(this.boardsize);
 
     for (var rows = 0; rows < this.boardsize; rows++) {
       this.speelVeld.Rows.push({ kaarten: [] })
 
       for (var columns = 0; columns < this.boardsize; columns++) {
-        this.speelVeld.Rows[rows].kaarten.push(kaartCount);
-        this.kaartenArray.push(getNextLetter())
-        kaartCount++;
+        this.speelVeld.Rows[rows].kaarten.push(cardIndex);
+        this.cardLetters.push(getNextLetter())
+        cardIndex++;
       }
     }
   }
