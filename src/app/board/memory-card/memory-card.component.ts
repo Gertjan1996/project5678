@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { GameService } from '../../game.service';
+import { TopscoreService } from '../../topscore-colors-new-game/gameinfo.service';
 
 @Component({
   selector: 'app-memory-card',
@@ -8,7 +9,7 @@ import { GameService } from '../../game.service';
 })
 export class MemoryCardComponent implements OnInit {
 
-  constructor(private game: GameService) { }
+  constructor(private game: GameService, private gameinfo: TopscoreService ) { }
 
   ngOnInit() {
   }
@@ -77,6 +78,9 @@ export class MemoryCardComponent implements OnInit {
   }
 
   endGame() {
-
+    clearInterval(this.game.totaalTimer);
+    var name = prompt("Enter your name: ");
+    var time = this.game.totaalTijd;
+    this.gameinfo.newScore(name, time);
   }
 }

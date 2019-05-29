@@ -52,6 +52,26 @@ export class GameService {
     }
   }
 
+  playAgain() {
+    this.firstCard = null;
+    this.secondCard = null;
+    this.tempFirstCard = null;
+    this.tempSecondCard = null;
+
+    clearInterval(this.timeOutTimer);
+    clearInterval(this.totaalTimer);
+
+    this.timeOut = 3;
+    this.totaalTijd = 0;
+    this.gevondenParen = 0;
+    this.boardsize = 4;
+    this.speelVeld = { "Rows": [] };
+    this.cardLetters = [];
+    this.karakter = '#';
+    
+    this.vulSpeelveld()
+  }
+
   nextLetter = function (size) {
     var letterArray = "AABBCCDDEEFFGGHHIIJJKKLLMMNNOOPPQQRRSSTTUUVVWWXXYYZZ".substring(0, size * size).split('');
     var idx = 0;
