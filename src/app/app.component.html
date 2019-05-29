@@ -1,9 +1,23 @@
-<h1>{{title}}</h1>
+<div class="container">
 
-<app-current-game-score></app-current-game-score>
-<app-current-time-left></app-current-time-left>
-<app-memory-card></app-memory-card>
-<app-top-five></app-top-five>
-<app-average-character-size></app-average-character-size>
-<app-color-options></app-color-options>
-<app-new-game></app-new-game>
+  <div class="row justify-content-center">
+    <div class="row">
+      <app-current-game-score></app-current-game-score>
+    </div>
+    <div class="row">
+      <app-current-time-left></app-current-time-left>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-10">
+      <app-memory-card></app-memory-card>
+    </div>
+    <div class="col-md-2">
+      <app-top-five></app-top-five>
+      <app-average-character-size></app-average-character-size>
+      <app-color-options></app-color-options>
+      <app-new-game></app-new-game>
+    </div>
+  </div>
+</div>
