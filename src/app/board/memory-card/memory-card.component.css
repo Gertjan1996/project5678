@@ -5,6 +5,8 @@ table#speelveld {
 
   table#speelveld td {
     cursor: pointer;
+    border: 2px solid;
+    border-color: black;
     text-align: center;
     color: white;
     font-size: large;
