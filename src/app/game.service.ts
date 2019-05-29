@@ -10,8 +10,10 @@ export class GameService {
   tempSecondCard;
 
   timeOutTimer;
+  totaalTimer;
 
   timeOut: number;
+  totaalTijd: number;
   gevondenParen: number;
   boardsize: number;
 
@@ -21,6 +23,7 @@ export class GameService {
 
   constructor() {
     this.timeOut = 3;
+    this.totaalTijd = 0;
     this.gevondenParen = 0;
     this.boardsize = 4;
     this.karakter = '#';
@@ -38,6 +41,14 @@ export class GameService {
         this.cardLetters.push(getNextLetter())
         cardIndex++;
       }
+    }
+  }
+
+  startTijd() {
+    if (!this.totaalTimer) {
+      this.totaalTimer = setInterval(() => {
+        this.totaalTijd++;
+      }, 1000);
     }
   }
 

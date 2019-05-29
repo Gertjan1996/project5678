@@ -23,7 +23,7 @@ export class MemoryCardComponent implements OnInit {
         this.game.firstCard = cardID;
         event.target.innerText = this.game.cardLetters[cardID];
 
-        // this.game.startTijd();
+        this.game.startTijd();
       }
       else if (this.game.firstCard != null && this.game.secondCard == null) {
         this.game.tempSecondCard = event.target;
