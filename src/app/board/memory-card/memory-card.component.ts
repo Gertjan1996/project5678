@@ -44,7 +44,9 @@ export class MemoryCardComponent implements OnInit {
       this.game.firstCard = null;
       this.game.secondCard = null;
 
-      // this.checkIfGameOver();
+      if (this.game.gevondenParen == this.game.cardLetters.length / 2) {
+        this.endGame()
+      }
     }
     else {
       this.startTimeOut()
@@ -72,5 +74,9 @@ export class MemoryCardComponent implements OnInit {
     this.game.firstCard = null;
     this.game.secondCard = null;
     this.game.timeOutTimer = null;
+  }
+
+  endGame() {
+
   }
 }
